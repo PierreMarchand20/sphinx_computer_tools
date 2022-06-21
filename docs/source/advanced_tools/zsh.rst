@@ -26,7 +26,7 @@ Here are some features of zsh that I like and often use (see next `section <#3-p
    .. asciinema:: zsh_cast/path_expansion.cast
       :rows: 10
 
-   -  **command arguments completion**: ``zsh`` suggests arguments to the command you wrote with a description of each option (for example, ``git`` we saw on the [previous post]({{< ref “/post/2022_CTCW_2_git/index.md” >}})) 
+   -  **command arguments completion**: ``zsh`` suggests arguments to the command you wrote with a description of each option (for example, ``git`` we saw :ref:`here <sec-git>`) 
 
    .. asciinema:: zsh_cast/argument_command_completion.cast
       :rows: 25
@@ -70,13 +70,13 @@ The `installation <https://github.com/zimfw/zimfw#installation>`__ process is qu
 Prompts
 =======
 
-The benefit in customizing your prompt is that it allows you to display more information. ``git``, that we introduced in our last [post]({{< ref “/post/2022_CTCW_2_git/index.md” >}}), is the usual first example. You can display the current branch, and if there are modifications to be committed. But you can also display timing between commands, battery level, and a lot of other information. I personally like to keep it simple, but you do you :wink:
+The benefit in customizing your prompt is that it allows you to display more information. ``git``, that we introduced in :ref:`here <sec-git>`), is the usual first example. You can display the current branch, and if there are modifications to be committed. But you can also display timing between commands, battery level, and a lot of other information. I personally like to keep it simple, but you do you |:wink:|
 
 Similarly to plugins, you could define a customized prompt by hand. But the risk is to add a delay each time you enter a command because of the loading time of the prompt.
 
 Similar problem, similar solution: people have already defined optimized prompts that allow for customization while avoiding delay most of the time. Two popular prompts are `Spaceship ZSH <https://github.com/denysdovhan/spaceship-prompt>`__ and `Powerlevel10k <https://github.com/romkatv/powerlevel10k>`__. I personally use the latter at the moment, but they are both fast, customizable and easy to use. The `installation <https://github.com/romkatv/powerlevel10k#get-started>`__ process is quite straightforward, and the configuration is done interactively.
 
-Here is an example with Powerlevel10k where I show current folder, current git status (notice the ``?1``, which means there is one file not tracked), python virtual environment, time, and a custom prompt that shows :star: with ``my display``.
+Here is an example with Powerlevel10k where I show current folder, current git status (notice the ``?1``, which means there is one file not tracked), python virtual environment, time, and a custom prompt that shows |:star:| with ``my display``.
 
 .. asciinema:: zsh_cast/prompt.cast
     :rows: 10

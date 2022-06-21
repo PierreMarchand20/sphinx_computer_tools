@@ -31,7 +31,8 @@ release = '0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinxcontrib.asciinema'
+    'sphinxcontrib.asciinema',
+    'sphinxemoji.sphinxemoji',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -67,3 +68,5 @@ sphinxcontrib_asciinema_defaults = {
     # 'font-size': '25px',
     # 'path': 'asciinema/zsh'
 }
+
+sphinxemoji_style = 'twemoji'
