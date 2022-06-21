@@ -58,12 +58,12 @@ html_title = "Computer tools"
 html_static_path = ['_static']
 
 html_css_files = [
-    'font.css'
 ]
 
 sphinxcontrib_asciinema_defaults = {
     # 'theme': 'solarized-dark',
     'preload': 1,
-    # 'font-size': '15px',
+    # 'font-family': "monospace, 'MesloLGS NF'",
+    # 'font-size': '25px',
     # 'path': 'asciinema/zsh'
 }
