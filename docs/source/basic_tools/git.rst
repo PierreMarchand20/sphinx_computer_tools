@@ -12,10 +12,10 @@ Note that I present command lines to use git, but there exists a lot of graphica
 :ref:`Live examples <git_example>` are available via `asciinema <https://asciinema.org>`__ files. Note that there are not just videos, you can also copy/paste displayed command lines.
 
 
-1. Usage
+Usage
 --------
 
-1.1. Setup
+Setup
 ~~~~~~~~~~
 
 Configuration
@@ -43,7 +43,7 @@ This will create a hidden folder ``.git`` with all the information of the reposi
 
 See :ref:`Example <git_example_setup>`.
 
-1.2. Versioning
+Versioning
 ~~~~~~~~~~~~~~~
 
 The first benefit of using git is that it allows you to *version* your source code. It means that git will track your files, save their history efficiently, and give you the possibility to easily navigate through the different versions of your files. Using git, you can forget about versioning your files numbering their name like ``file1.txt``, ``file2.txt``, ``filefinal.txt``, ``filefinal1.txt``, … and all the redundancy it implies.
@@ -131,7 +131,7 @@ See :ref:`Example <git_example_navigating_the_history>`.
 
 
 
-1.3. Back up
+Back up
 ~~~~~~~~~~~~
 
 Another advantage of git is the possibility to back up your repository in a remote server. It is said to be a *distributed* version-control system (unlike SVN for example), because both your local repository and the remote repository will have the full history after each synchronization.
@@ -176,7 +176,7 @@ Now, we create a new commit locally, so that the branch ``master`` is further th
 
 We just need to do ``git push`` to update ``origin/master`` (by default, git will push to ``origin/master``, no need to specify it).
 
-1.4. Synchronization
+Synchronization
 ~~~~~~~~~~~~~~~~~~~~
 
 Having a remote repository, you can also use it to synchronize a repository on several computers, let’s say ``Computer 1`` and ``Computer 2``.
@@ -211,7 +211,7 @@ Two remarks here:
 
 In case you still encounter this situation (you forgot to commit a change, or to push at the end of a working session for example), we refer to the next section.
 
-1.5. Collaboration
+Collaboration
 ~~~~~~~~~~~~~~~~~~
 
 If you want to collaborate with some else, or if you work with a team on a project, then the previous issue may occur more often. It is very likely that your coworkers will commit some changes while you are also working on the repository, so that, you will be in the situation described in the previous :ref:`figure <git_fig_remote_3>`. To avoid this, you need to adopt a workflow, i.e., a way to work all together with the git repository. There are several solutions depending on how you work with your team/coworkers, the number of contributors, etc. It is an advanced subject, and I give some pointers for more information in the :ref:`references <git_references_specific_discussions>`.
@@ -303,14 +303,14 @@ where the diverged commit ``e9b2d0a`` is now behind ``30f00e3``. We moved the ba
 
 .. _git_example: 
 
-2. Examples
+Examples
 -----------
 
 You can find here live terminal session via `asciinema <https://asciinema.org>`__ videos. There are not just videos, you can also copy/paste displayed command lines.
 
 .. _git_example_setup:
 
-2.1. Setup
+Setup
 ~~~~~~~~~~
 
 We configure git for the first time:
@@ -323,7 +323,7 @@ We configure git for the first time:
 
 .. _git_example_create_history:
 
-2.2. Create History
+Create History
 ~~~~~~~~~~~~~~~~~~~
 
 We create our first file and track it with git.
@@ -333,7 +333,7 @@ We create our first file and track it with git.
 
 .. _git_example_navigating_the_history:
 
-2.3. Navigating the history
+Navigating the history
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Taking a similar example as described :ref:`here <git_fig_checkout_head2>`. We have three commits, starting from the last one, we navigate using
@@ -349,7 +349,7 @@ Remark how ``HEAD`` is said to be on master when on the third commit, but not th
 
 .. _git_example_adding_remote:
 
-2.3. Adding remote
+Adding remote
 ~~~~~~~~~~~~~~~~~~
 
 Note how ``origin/master`` appears now when using ``git log``.
@@ -359,7 +359,7 @@ Note how ``origin/master`` appears now when using ``git log``.
 
 .. _git_example_working_with_remote:
 
-2.4. Working with remote
+Working with remote
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Similarly to this :ref:`example <git_fig_local_new_commit>`, we create a new commit locally so that the local branch ``master`` is further than the remote branch ``origin/master``.
@@ -371,7 +371,7 @@ Note that ``origin/master`` appears on the third commit, while ``HEAD`` and ``ma
 
 .. _git_example_auto_merging:
 
-2.5. Auto merging
+Auto merging
 ~~~~~~~~~~~~~~~~~
 
 We reproduce exactly the example given :ref:`here <git_fig_merging>` with one repository shared by two computers, represented here by two different folders on the same computer. The repository is one commit further on ``Computer 2`` and on ``Computer 1``, compared to the remote. But the two changes do not overlap.
@@ -383,7 +383,7 @@ If you try to reproduce this example, ``git`` will open your editor to write a c
 
 .. _git_example_merging:
 
-2.6. Merging
+Merging
 ~~~~~~~~~~~~
 
 We reproduce exactly the example given :ref:`here <git_fig_merging>` with one repository shared by two computers, represented here by two different folders on the same computer. The repository is one commit further on ``Computer 2`` and on ``Computer 1``, compared to the remote. But the two changes overlap.
@@ -393,10 +393,10 @@ We reproduce exactly the example given :ref:`here <git_fig_merging>` with one re
 
 .. _git_ref:
 
-3. References
+References
 -------------
 
-3.1. General presentations
+General presentations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  `Pro Git book <https://git-scm.com/book/en/v2>`__ by Scott Chacon and Ben Straub, free and available in several languages.
@@ -405,19 +405,19 @@ We reproduce exactly the example given :ref:`here <git_fig_merging>` with one re
 
 .. _git_references_specific_discussions:
 
-3.2. Specific discussions
+Specific discussions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Discussions on why you need to add and commit `here <https://stackoverflow.com/questions/49228209/whats-the-use-of-the-staging-area-in-git>`__ and `there <https://stackoverflow.com/questions/4878358/why-would-i-want-stage-before-committing-in-git>`__.
 -  Several possible workflows for teams are described `here <https://www.atlassian.com/git/tutorials/comparing-workflows>`__ by Atlassian.
 -  Lists of GUIs `here <https://git-scm.com/downloads/guis>`__.
 
-3.3. Other tutorials
+Other tutorials
 ~~~~~~~~~~~~~~~~~~~~
 
 -  `Tutorial <https://infomath.pages.math.cnrs.fr/tutorial/git/>`__ of Infomath
 
-3.4. To go further
+To go further
 ~~~~~~~~~~~~~~~~~~
 
 -  `Stashing <https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning>`__

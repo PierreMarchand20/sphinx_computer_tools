@@ -8,7 +8,9 @@ One crucial tool a developer needs is a *terminal*. It is a tool to interact dif
 Terminology
 ===========
 
-{{< figure src=“terminal.drawio.svg” title=“Terminology” lightbox=“true” >}}
+.. figure:: ../_static/svg/terminal_bash/terminal.drawio.svg
+
+   Terminology
 
 -  `Command-line interpreter <https://en.wikipedia.org/wiki/Command-line_interface>`__, or *shell*: a program that processes commands, which allows users to access operating system’s services. The syntax (command’s names, arguments, …) is specific to the shell. Examples of shells: ``sh``, ``bash`` (the most common), ``fish``, and ``zsh`` which is the focus of this post.
 -  `Terminal <https://en.wikipedia.org/wiki/Terminal_emulator>`__, or *terminal emulator*: a text interface to a shell. In other words, it is the software in which users can access to the command-line interface. Before, terminal refereed to a physical hardware with a keyboard and a monitor. They are now mostly *virtual*, and in practice, it is the window in which we can interact with a shell. Examples of terminals (see `list <https://en.wikipedia.org/wiki/List_of_terminal_emulators>`__):

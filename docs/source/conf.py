@@ -33,6 +33,7 @@ release = '0.1'
 extensions = [
     'sphinxcontrib.asciinema',
     'sphinxemoji.sphinxemoji',
+    'sphinxcontrib.rsvgconverter',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -70,3 +71,8 @@ sphinxcontrib_asciinema_defaults = {
 }
 
 sphinxemoji_style = 'twemoji'
+
+# -- Options for LaTeC output -------------------------------------------------
+latex_engine = 'lualatex'
+latex_elements = {}
+latex_elements['preamble'] = '\\usepackage{fontspec}\n'
