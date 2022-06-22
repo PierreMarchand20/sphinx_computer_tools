@@ -1,3 +1,5 @@
+.. _sec-bash:
+
 Terminal - Bash
 ###############
 

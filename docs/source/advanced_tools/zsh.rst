@@ -1,3 +1,4 @@
+.. _sec-zsh: 
 
 Terminal - ZSH
 ##############
@@ -23,37 +24,37 @@ Here are some features of zsh that I like and often use (see next `section <#3-p
 
    -  **recursive path completion**: no need to write the full directory/file names
 
-   .. asciinema:: zsh_cast/path_expansion.cast
+   .. asciinema:: ../_static/asciicast/zsh/path_expansion.cast
       :rows: 10
 
    -  **command arguments completion**: ``zsh`` suggests arguments to the command you wrote with a description of each option (for example, ``git`` we saw :ref:`here <sec-git>`) 
 
-   .. asciinema:: zsh_cast/argument_command_completion.cast
+   .. asciinema:: ../_static/asciicast/zsh/argument_command_completion.cast
       :rows: 25
 
    -  **command arguments flags**: same as the previous feature, but for flags
 
-   .. asciinema:: zsh_cast/flag_command_completion.cast
+   .. asciinema:: ../_static/asciicast/zsh/flag_command_completion.cast
       :rows: 25 
 
    -  **variable expansion**:
 
-   .. asciinema:: zsh_cast/variable_expansion.cast
+   .. asciinema:: ../_static/asciicast/zsh/variable_expansion.cast
       :rows: 10 
 
 -  **Better history navigation**: you can search for a command in your history with any substring of this command using up and down arrows (with `history-substring-search <https://github.com/zsh-users/zsh-history-substring-search>`__) 
 
-.. asciinema:: zsh_cast/history_substring_search.cast
+.. asciinema:: ../_static/asciicast/zsh/history_substring_search.cast
     :rows: 20 
 
 -  **Autosuggestion**: the last command starting by what you write is suggested and you can use ``tab`` to autocomplete it (with `zsh-autosuggestions <https://github.com/zsh-users/zsh-autosuggestions>`__)
 
-.. asciinema:: zsh_cast/autosuggestion.cast
+.. asciinema:: ../_static/asciicast/zsh/autosuggestion.cast
     :rows: 15
 
 -  **Syntax highlighting**: a few examples (with `zsh-syntax-highlighting <https://github.com/zsh-users/zsh-syntax-highlighting>`__)
 
-.. asciinema:: zsh_cast/syntax_highlighting.cast
+.. asciinema:: ../_static/asciicast/zsh/syntax_highlighting.cast
     :rows: 20
 
 -  **Plugin and theme support**: zsh is known for its `plugin managers <#3-plugin-managers>`__ that allows installing/activating the previously cited plugins and many others, but it is also known for its highly customizable `prompt <#4-prompts>`__. We are going to see how to benefit from them in the following.
@@ -78,7 +79,7 @@ Similar problem, similar solution: people have already defined optimized prompts
 
 Here is an example with Powerlevel10k where I show current folder, current git status (notice the ``?1``, which means there is one file not tracked), python virtual environment, time, and a custom prompt that shows |:star:| with ``my display``.
 
-.. asciinema:: zsh_cast/prompt.cast
+.. asciinema:: ../_static/asciicast/zsh/prompt.cast
     :rows: 10
 
 References
