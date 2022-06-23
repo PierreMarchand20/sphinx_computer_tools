@@ -9,14 +9,14 @@ Each one of these usages will require the previous ones. For example, you need t
 
 Note that I present command lines to use git, but there exists a lot of graphical interfaces (see this `list <https://git-scm.com/downloads/guis>`__), but understanding how git works is still necessary to use them. You can also find a `presentation <https://pierremarchand20.github.io/slides/2019_01_10_infomath_git/#1>`_ I did a few years ago on git with a similar approach.
 
-:ref:`Live examples <git_example>` are available via `asciinema <https://asciinema.org>`__ files. Note that there are not just videos, you can also copy/paste displayed command lines.
+.. only:: not latex
+
+    Live examples are available via `asciinema <https://asciinema.org>`__ files. Note that there are not just videos, you can also copy/paste displayed command lines.
 
 
-Usage
---------
 
 Setup
-~~~~~~~~~~
+--------
 
 Configuration
 ^^^^^^^^^^^^^
@@ -32,7 +32,10 @@ Each modification you make to your repository will be associated with this ident
 
 The flag ``--global`` just means that this identity will be used in all the repository you work with on your system. You can always set local configuration to override it, and you can also set other types of configuration variables like the editor used to write commit messages, diff tool and so on. We refer to this `page <https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup>`__ if you want to go further, but it should be enough at first. You can check your configuration with ``git config --list``.
 
-See :ref:`Example <git_example_setup>`.
+
+
+
+
 
 Create repository
 ^^^^^^^^^^^^^^^^^
@@ -41,10 +44,13 @@ To start locally a repository, go to the folder you want to work with, here ``Yo
 
 This will create a hidden folder ``.git`` with all the information of the repository. You should not modify anything in ``.git``.
 
-See :ref:`Example <git_example_setup>`.
+.. only:: not latex
+
+    .. asciinema:: ../_static/asciicast/git/setup.cast
+        :rows: 27
 
 Versioning
-~~~~~~~~~~~~~~~
+----------
 
 The first benefit of using git is that it allows you to *version* your source code. It means that git will track your files, save their history efficiently, and give you the possibility to easily navigate through the different versions of your files. Using git, you can forget about versioning your files numbering their name like ``file1.txt``, ``file2.txt``, ``filefinal.txt``, ``filefinal1.txt``, … and all the redundancy it implies.
 
@@ -78,7 +84,6 @@ By default, the first branch you create is called ``master`` [1]_.
 
    Versioning
 
-See :ref:`Example <git_example_create_history>`.
 
 .. note:: 
     Why do you need two commands just to update your repository?
@@ -87,7 +92,10 @@ See :ref:`Example <git_example_create_history>`.
 
     For example, if you add a feature to your code, and fix a bug at the same time. You can add everything, review everything, commit the changes associated with your fix with the specific description, and then do the same for your new feature. Remember that your commit messages need to be descriptive enough to easily navigate the repository’s history.
 
+.. only:: not latex
 
+    .. asciinema:: ../_static/asciicast/git/firstfile.cast
+        :rows: 30
 
 Navigating the history
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -124,15 +132,27 @@ To navigate your history, you can use
     ``git checkout e9b2d0``
 
 
-See :ref:`Example <git_example_navigating_the_history>`.
+
+
+.. only:: not latex
+
+    Taking a similar example, we have three commits, starting from the last one, we navigate using
+
+    -  relative reference (``HEAD~2``)
+    -  branch name (``master``)
+    -  absolute reference (``f99f6199``)
+
+    .. asciinema:: ../_static/asciicast/git/navigating.cast
+        :rows: 30
+
+    .. note:: Remark how ``HEAD`` is said to be on master when on the third commit, but not the others.
 
 .. tip:: 
     You are lost? ``git status`` will tell you where you are and what you can do.
 
 
-
 Back up
-~~~~~~~~~~~~
+--------
 
 Another advantage of git is the possibility to back up your repository in a remote server. It is said to be a *distributed* version-control system (unlike SVN for example), because both your local repository and the remote repository will have the full history after each synchronization.
 
@@ -164,6 +184,14 @@ We have now a remote branch ``origin/master``, which is the copy on the remote `
 
     Remote added
 
+
+.. only:: not latex
+
+    .. asciinema:: ../_static/asciicast/git/remote.cast
+        :rows: 30
+
+    .. note:: Remark how ``origin/master`` appears now when using ``git log``.
+
 Working with a remote repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -176,8 +204,14 @@ Now, we create a new commit locally, so that the branch ``master`` is further th
 
 We just need to do ``git push`` to update ``origin/master`` (by default, git will push to ``origin/master``, no need to specify it).
 
+.. only:: not latex
+
+    .. asciinema:: ../_static/asciicast/git/sync.cast
+        :rows: 30
+    .. note::  Remark that ``origin/master`` appears on the third commit, while ``HEAD`` and ``master`` are on the fourth commit after ``git commit``.
+
 Synchronization
-~~~~~~~~~~~~~~~~~~~~
+---------------
 
 Having a remote repository, you can also use it to synchronize a repository on several computers, let’s say ``Computer 1`` and ``Computer 2``.
 
@@ -212,7 +246,7 @@ Two remarks here:
 In case you still encounter this situation (you forgot to commit a change, or to push at the end of a working session for example), we refer to the next section.
 
 Collaboration
-~~~~~~~~~~~~~~~~~~
+-------------
 
 If you want to collaborate with some else, or if you work with a team on a project, then the previous issue may occur more often. It is very likely that your coworkers will commit some changes while you are also working on the repository, so that, you will be in the situation described in the previous :ref:`figure <git_fig_remote_3>`. To avoid this, you need to adopt a workflow, i.e., a way to work all together with the git repository. There are several solutions depending on how you work with your team/coworkers, the number of contributors, etc. It is an advanced subject, and I give some pointers for more information in the :ref:`references <git_references_specific_discussions>`.
 
@@ -262,7 +296,14 @@ Now, we commit both changes locally, we push the modifications by ``Computer 2``
     Merging
 
 
-See :ref:`Example <git_example_auto_merging>`.
+.. only:: not latex
+
+    We reproduce exactly this example given with one repository shared by two computers, represented here by two different folders on the same computer. The repository is one commit further on ``Computer 2`` and on ``Computer 1``, compared to the remote. But the two changes do not overlap.
+
+    .. asciinema:: ../_static/asciicast/git/automerge.cast
+        :rows: 35
+
+    .. note::  If you try to reproduce this example, ``git`` will open your editor to write a commit message (``nano`` by default). But for auto merges like this, the commit message is already written and you can just close your editor. I removed this behavior of opening my editor in case of auto merge for the sake of the live example, but you should keep this behavior.
 
 
 Let us look at the case where the modifications are overlapping. On ``Computer 2``, we do the following change instead:
@@ -287,7 +328,13 @@ If we commit locally on both computers, and we push on ``Computer 2``. Then, whe
 
 We see the change from the local ``HEAD`` (so, ``Computer 1``), and the change from the commit on the remote (so, ``Computer 2``). We just need to modify ``FirstFile.txt`` as we want, then stage it and commit.
 
-See :ref:`Example <git_example_merging>`.
+.. only:: not latex
+
+
+    We reproduce again the example with one repository shared by two computers, represented here by two different folders on the same computer. The repository is one commit further on ``Computer 2`` and on ``Computer 1``, compared to the remote. But the two changes overlap.
+
+    .. asciinema:: ../_static/asciicast/git/merge.cast
+        :rows: 35
 
 
 Rebase
@@ -301,103 +348,13 @@ While ``git merge`` creates a new commit, as illustrated :ref:`here <git_fig_mer
 
 where the diverged commit ``e9b2d0a`` is now behind ``30f00e3``. We moved the base of ``master`` to the tip of ``origin/master``. This is particularly useful to avoid an additional commit, and in the case of two different branches, it allows preserving both history. But, there is one `golden rule <https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing>`__ when using ``git rebase``. It should **not be used with public branches** For example, you should not rebase ``origin/master`` instead of ``master``, because it would modify the commit history of the branch shared with others.
 
-.. _git_example: 
-
-Examples
------------
-
-You can find here live terminal session via `asciinema <https://asciinema.org>`__ videos. There are not just videos, you can also copy/paste displayed command lines.
-
-.. _git_example_setup:
-
-Setup
-~~~~~~~~~~
-
-We configure git for the first time:
-
--  set an identity
--  initialize repository
-
-.. asciinema:: ../_static/asciicast/git/setup.cast
-    :rows: 30
-
-.. _git_example_create_history:
-
-Create History
-~~~~~~~~~~~~~~~~~~~
-
-We create our first file and track it with git.
-
-.. asciinema:: ../_static/asciicast/git/firstfile.cast
-    :rows: 30
-
-.. _git_example_navigating_the_history:
-
-Navigating the history
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Taking a similar example as described :ref:`here <git_fig_checkout_head2>`. We have three commits, starting from the last one, we navigate using
-
--  relative reference (``HEAD~2``)
--  branch name (``master``)
--  absolute reference (``f99f6199``)
-
-Remark how ``HEAD`` is said to be on master when on the third commit, but not the others.
-
-.. asciinema:: ../_static/asciicast/git/navigating.cast
-    :rows: 30
-
-.. _git_example_adding_remote:
-
-Adding remote
-~~~~~~~~~~~~~~~~~~
-
-Note how ``origin/master`` appears now when using ``git log``.
-
-.. asciinema:: ../_static/asciicast/git/remote.cast
-    :rows: 30
-
-.. _git_example_working_with_remote:
-
-Working with remote
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Similarly to this :ref:`example <git_fig_local_new_commit>`, we create a new commit locally so that the local branch ``master`` is further than the remote branch ``origin/master``.
-
-Note that ``origin/master`` appears on the third commit, while ``HEAD`` and ``master`` are on the fourth commit after ``git commit``.
-
-.. asciinema:: ../_static/asciicast/git/sync.cast
-    :rows: 30
-
-.. _git_example_auto_merging:
-
-Auto merging
-~~~~~~~~~~~~~~~~~
-
-We reproduce exactly the example given :ref:`here <git_fig_merging>` with one repository shared by two computers, represented here by two different folders on the same computer. The repository is one commit further on ``Computer 2`` and on ``Computer 1``, compared to the remote. But the two changes do not overlap.
-
-If you try to reproduce this example, ``git`` will open your editor to write a commit message (``nano`` by default). But for auto merges like this, the commit message is already written and you can just close your editor. I removed this behavior of opening my editor in case of auto merge for the sake of the live example, but you should keep this behavior.
-
-.. asciinema:: ../_static/asciicast/git/automerge.cast
-    :rows: 35
-
-.. _git_example_merging:
-
-Merging
-~~~~~~~~~~~~
-
-We reproduce exactly the example given :ref:`here <git_fig_merging>` with one repository shared by two computers, represented here by two different folders on the same computer. The repository is one commit further on ``Computer 2`` and on ``Computer 1``, compared to the remote. But the two changes overlap.
-
-.. asciinema:: ../_static/asciicast/git/merge.cast
-    :rows: 35
-
 .. _git_ref:
 
 References
 -------------
 
 General presentations
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 -  `Pro Git book <https://git-scm.com/book/en/v2>`__ by Scott Chacon and Ben Straub, free and available in several languages.
 -  `Introduction to Git with Scott Chacon of GitHub <https://www.youtube.com/watch?v=ZDR433b0HJY>`__ on YouTube.
@@ -406,19 +363,19 @@ General presentations
 .. _git_references_specific_discussions:
 
 Specific discussions
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 -  Discussions on why you need to add and commit `here <https://stackoverflow.com/questions/49228209/whats-the-use-of-the-staging-area-in-git>`__ and `there <https://stackoverflow.com/questions/4878358/why-would-i-want-stage-before-committing-in-git>`__.
 -  Several possible workflows for teams are described `here <https://www.atlassian.com/git/tutorials/comparing-workflows>`__ by Atlassian.
 -  Lists of GUIs `here <https://git-scm.com/downloads/guis>`__.
 
 Other tutorials
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 -  `Tutorial <https://infomath.pages.math.cnrs.fr/tutorial/git/>`__ of Infomath
 
 To go further
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 -  `Stashing <https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning>`__
 -  `Submodules <https://git-scm.com/book/en/v2/Git-Tools-Submodules>`__
@@ -426,6 +383,3 @@ To go further
 
 .. [1]
    It is quite likely that ``main`` is going to be the new default name instead of ``master``.
-
-.. _presentation: https://pierremarchand20.github.io/slides/2019_01_10_infomath_git/#1
-.. _test: https://pierremarchand20.github.io/slides/2019_01_10_infomath_git/#1
