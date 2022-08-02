@@ -10,3 +10,4 @@ Basic tools
    bash
    git
    ssh
+   vscode

@@ -8,7 +8,7 @@ There is a steep learning curve to use a terminal so today, we will see how to i
 Z Shell
 ===========
 
-We are interested in ``zsh``, which is a shell derived from the Bourne shell ``sh``, like ``bash``. It is the reason why they both share a lot of features. If you already know how to use ``bash`` (``cd``, ``mv``, ``touch``, ``mkdir``, …), don’t worry, you won’t start from scratch again. Note that to make it your default shell, you can use:
+We are interested in ``zsh``, which is a shell derived from the Bourne shell ``sh``, like ``bash`` we discussed :ref:`here <sec-bash>`. It is the reason why they both share a lot of features. If you already know how to use ``bash`` (``cd``, ``mv``, ``touch``, ``mkdir``, …), don’t worry, you won’t start from scratch again. Note that to make it your default shell, you can use:
 
 .. code:: bash
 
@@ -81,12 +81,14 @@ Here is an example with Powerlevel10k where I show current folder, current git s
 
 .. asciinema:: ../_static/asciicast/zsh/prompt.cast
     :rows: 10
+    :font-size: 25
+    :font-family: 'Terminal Glyphs',Consolas, Menlo, 'Bitstream Vera Sans Mono', monospace, 'Powerline Symbols'
 
 References
 ==========
 
 Z Shell
-~~~~~~~~~~~~
+~~~~~~~
 
 -  `Website <http://zsh.sourceforge.net>`__ of zsh.
 -  `Some features <https://github.com/hmml/awesome-zsh>`__ of zsh

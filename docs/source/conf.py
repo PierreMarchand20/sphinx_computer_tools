@@ -34,6 +34,7 @@ extensions = [
     'sphinxcontrib.asciinema',
     'sphinxemoji.sphinxemoji',
     'sphinxcontrib.rsvgconverter',
+    'sphinx_copybutton',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -60,14 +61,15 @@ html_title = "Computer tools"
 html_static_path = ['_static']
 
 html_css_files = [
+    "css/custom.css"
 ]
 
 sphinxcontrib_asciinema_defaults = {
     # 'theme': 'solarized-dark',
     'preload': 1,
     # 'font-family': "monospace, 'MesloLGS NF'",
-    # 'font-size': '25px',
-    # 'path': 'asciinema/zsh'
+    # 'font-size': '25',
+    # 'path': '_static/asciicast/'
 }
 
 sphinxemoji_style = 'twemoji'

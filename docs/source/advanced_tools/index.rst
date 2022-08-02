@@ -9,3 +9,4 @@ Advanced tools
    zsh
    dotfiles
    docker
+   vscode

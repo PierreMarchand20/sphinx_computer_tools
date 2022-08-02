@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Terminal Glyphs";
+    src: url("_static/fonts/glyphs.ttf") format("truetype");
+}
+
+.asciinema-player-wrapper {
+    text-align: center !important;
+    padding-bottom: 25px;
+}
+
+.asciinema-terminal {
+    font-family: Consolas, Menlo, 'Bitstream Vera Sans Mono', monospace, 'Terminal Glyphs';
+}

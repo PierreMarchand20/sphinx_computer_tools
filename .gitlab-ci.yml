@@ -1,12 +1,13 @@
 stages:
   - deploy
+  - latex
 
 pages:
   stage: deploy
   image: python:3.9-slim
   before_script:
     - apt-get update && apt-get install make librsvg2-bin --no-install-recommends -y
-    - python -m pip install sphinx furo sphinxcontrib.asciinema sphinxemoji sphinxcontrib-svg2pdfconverter
+    - python -m pip install sphinx furo sphinxcontrib.asciinema sphinxemoji sphinxcontrib-svg2pdfconverter sphinx-copybutton
   script:
     - cd docs && make html
   after_script:
