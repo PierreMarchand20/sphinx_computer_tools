@@ -8,12 +8,11 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: Content:
+   :caption: Content
 
    basic_tools/index
-
    advanced_tools/index
-
+   PDF version <https://pmarchand.pages.math.cnrs.fr/computertools/computertools.pdf>
 
 
 .. Indices and tables
