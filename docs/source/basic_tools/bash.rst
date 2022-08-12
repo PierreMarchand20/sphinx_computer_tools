@@ -10,6 +10,8 @@ One crucial tool a developer needs is a *terminal*. It is a tool to interact dif
     Live examples are available via `asciinema <https://asciinema.org>`__ files. Note that there are not just videos, you can also copy/paste displayed command lines. Try to understand and to reproduce them in your own terminal.
 
 
+.. _sec-bash-terminology:
+
 Terminology
 ===========
 
@@ -41,6 +43,8 @@ Terminology
 
 -  `Command prompt <https://en.wikipedia.org/wiki/Command-line_interface#Command_prompt>`__: a sequence of characters in the command-line interface (CLI) that tells you the shell is ready to accept a command. It *prompts* you to give a command. It usually contains other information (path of the current directory, hostname, …).
 
+.. note:: VS Code comes with its own `terminal <https://code.visualstudio.com/docs/terminal/basics>`_, which you can use along side having opened files and editing them.
+   
 Filesystem
 ==========
 
@@ -58,6 +62,38 @@ Now that we understand that each directory and file are parts of a hierarchical 
 
 - *absolute path*, which corresponds to the location starting from the root directory. For example ``/home/Alice/textfile.txt``.
 - *relative path*, which corresponds to the location starting from the current working directory. Assuming the latter is ``/home/Bob``, the relative path to ``textfile.txt`` would be ``../Alice/textfile.txt``, where ``..`` refers to the parent directory.
+
+.. _sec-bash-variables:
+
+Variables
+=========
+
+Shells can often be seen also as `programming languages <https://www.gnu.org/software/bash/manual/html_node/What-is-a-shell_003f.html>`_, in particular you can write scripts with variables, if/for loops, and functions. We will not dive in too much in this direction, but we need to understand at least variables.  
+
+You can set variables using ``=`` (without whitespaces around), here is an example with a variable containing a string:
+
+.. code-block:: bash
+
+   my_variable="Hello World!"
+
+And you refer to the value of a variable using ``$``, 
+
+.. code-block:: bash
+
+   echo $my_variable
+
+This is important to understand because when starting a shell, it sets *environment variables* to record the properties of the new shell session. You can see the active environment variables using the command ``env``. In particular, you should find the following variables:
+
+- ``HOME`` containing the path to the home directory,
+- ``SHELL`` containing the path to the shell,
+- ``PWD`` containing the path to the current directory,
+- ``PATH`` containing a list of important paths, used when compiling code for example,
+
+and many others... It also sets a number of other variables (that you can also print with the command ``set``), including the variable ``PS1``. This variable contains the command prompt, which was mentionned in :ref:`sec-bash-terminology` . By default, it usually contains only ``$``, but it can be customized to display more information.
+
+.. only:: not latex
+
+   In the following asciinema examples, I will use a customized prompt that displays the current directory followed by the character ``$``. 
 
 Navigation
 ==========
@@ -94,7 +130,7 @@ To know where to go, you may need to know what are the files and directory conta
    Here is a small example illustrating the previous commands where the structure is the same as in :ref:`directory_hierarchy`.
 
    .. asciinema:: ../_static/asciicast/bash/navigation_output.cast
-      :rows: 14
+      :rows: 19
 
 Change 
 ==========================
@@ -119,7 +155,7 @@ We can now start to modify the hierarchical structure adding and removing files 
 
    rm my_textfile.txt
 
-- To remove a directory named ``my_directory``, use ``rm`` (**r**\ e\ **m**\ ove) with the flag ``-r`` or ``--recursive`` to allow recursive deletion of the directory's content
+- To remove a directory named ``my_directory``, use ``rm`` with the flag ``-r`` or ``--recursive`` to allow recursive deletion of the directory's content
 
 .. code-block:: bash
 
@@ -132,37 +168,75 @@ We can now start to modify the hierarchical structure adding and removing files 
    Here is a small example illustrating the previous commands where the structure is the same as in :ref:`directory_hierarchy`.
 
    .. asciinema:: ../_static/asciicast/bash/change_structure_output.cast
-      :rows: 17
+      :rows: 30
 
 Tips and tricks
 ===============
 
 .. rubric:: Autocompletion 
    
-Use ``tab`` to autocomplete paths. When writing the beginning of path, hit ``tab`` to autocomplete interpretation, if there is not a unique possibility, it will display the different possibility.
+Use ``tab`` to autocomplete paths. When writing the beginning of path, hit ``tab`` to autocomplete. If there is not a unique possibility, it will display the different possibility.
 
 .. only:: not latex
 
    .. asciinema:: ../_static/asciicast/bash/autocompletion_output.cast
-      :rows: 7
+      :rows: 11
 
    In this example, I hit ``tab`` on the second line to avoid writing the long name of the directory.
 
+.. rubric:: Navigate in your history
+
+Use ``Up`` arrow to navigate through your command history.
+
+.. only:: not latex
+      
+   .. asciinema:: ../_static/asciicast/bash/history_output.cast
+      :rows: 15
+
+   In this example, I type ``Up`` three times to recover the first command I typed, and then ``enter`` to run the command.
 
 .. rubric:: Backward research
    
-Use ``ctrl-r`` to look for previous command calls.
+Use ``ctrl-r`` to look for previous command calls. Use ``ctrl-r`` and type the beginning of the command you are looking for in your history, and you want to recover. It will show you the last command you used starting by what you typed, and you can use ``ctrl-r`` to look for previous commands starting by what you typed.
 
 .. only:: not latex
       
    .. asciinema:: ../_static/asciicast/bash/backward_search_output.cast
-      :rows: 7
+      :rows: 15
 
    In this example, I hit ``ctrl-r`` once, I then start to write ``tou`` so that it displays the last command starting by *tou*, and finally hit again ``ctrl-r`` to search for the previous command starting by *tou*.
 
+.. rubric:: Man page
+
+To learn how to use a command, use the command ``man`` with the name of the command as argument. For example ``man echo`` displays to manual for the command ``echo`` (hit ``q`` to leave).
+
+.. only:: not latex
+      
+   .. asciinema:: ../_static/asciicast/bash/man_page_output.cast
+      :rows: 26
+
+Notes for VS Code users
+=======================
+
+As we previously mentioned, VS Code comes with its own `terminal <https://code.visualstudio.com/docs/terminal/basics>`_ where you can use any shell available on your workstation, so no need for an extension a priori. Everything we mentioned here should work since it does not depend on the terminal, but is related to the bash shell.
+
+That being said, I should point out that VS Code's terminal has some nice features you should be aware of, for examples:
+
+- Terminal processes are `restored <https://code.visualstudio.com/docs/terminal/basics#_terminal-process-reconnection>`_ on window reload, if you reload your VS Code window for example, it will not kill your shell session.
+- Every path or URL displayed in the terminal is a `link <https://code.visualstudio.com/docs/terminal/basics#_links>`_, meaning you can left-click holding ``Ctrl/Cmd`` [#]_ to use it (as in the editor). For a file, it will open it an editor, which is very useful when compiling or debugging.
+- You can use "`Find <https://code.visualstudio.com/docs/terminal/basics#_find>`_" in the terminal using ``Ctrl/Cmd+f`` as you would expect.
+
+VS Code also added recently a new feature called `Terminal Shell Integration <https://code.visualstudio.com/docs/terminal/shell-integration>`_. For common shells (including bash), VS Code can understand what is happening inside the shell, which allows him to add some other nice features, for example:
+
+- `Command decorations <https://code.visualstudio.com/docs/terminal/shell-integration#_command-decorations-and-the-overview-ruler>`_: VS Code recovers the exit code of each command you call and displays blue dot on the left if it succeeded, a red one otherwise.
+- `Command navigation <https://code.visualstudio.com/docs/terminal/shell-integration#_command-navigation>`_: you can quickly navigate between commands using ``Ctrl/Cmd+Up`` and ``Ctrl/Cmd+Down``.
+
+
+I only mentioned some features for VS Code's terminal and shell integration, go look at the documentation to see them all. Besides, they will probably add more features in the near future.
+
+
 References
 ===========
-
 
 .. rubric:: Terminology
 
@@ -175,3 +249,11 @@ References
 
 - Wikipedia for Unix and Unix-like filesystems: `Filesystem Hierarchy Standard <https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard>`_
 - Wikipedia for `home directory <https://en.wikipedia.org/wiki/Home_directory>`_, `root directory <https://en.wikipedia.org/wiki/Root_directory>`_, `working directory <https://en.wikipedia.org/wiki/Working_directory>`_, `path <https://en.wikipedia.org/wiki/Path_(computing)>`_
+
+.. rubric:: Integrated terminal in VS Code
+
+- VS Code's Documentation on its `integrated terminal <https://code.visualstudio.com/docs/terminal/basics>`_
+- `Mastering VS Code's Terminal <https://www.growingwiththeweb.com/2017/03/mastering-vscodes-terminal.html>`_: a blog with a lot of tips to improve and customize VS Code's terminal
+
+.. [#] 
+   It means ``Ctrl``, expect on macOS where ``Cmd`` should be used instead.

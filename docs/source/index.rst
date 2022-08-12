@@ -6,10 +6,20 @@
 
 .. include:: ../../README.rst
 
+.. raw:: latex
+
+         \tableofcontents
+         
+.. only:: not latex
+   
+   **Contents**
+
+
 .. toctree::
    :maxdepth: 2
-   :caption: Content
+   :numbered: 4
 
+   introduction/index
    basic_tools/index
    advanced_tools/index
    PDF version <https://pmarchand.pages.math.cnrs.fr/computertools/computertools.pdf>

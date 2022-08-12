@@ -32,7 +32,6 @@ release = '0.1'
 # ones.
 extensions = [
     'sphinxcontrib.asciinema',
-    'sphinxemoji.sphinxemoji',
     'sphinxcontrib.rsvgconverter',
     'sphinx_copybutton',
 ]
@@ -45,6 +44,17 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
+# Numbering figures
+numfig = True
+numfig_secnum_depth = 2
+
+# Smart quotes
+smartquotes = True
+
+#
+rst_epilog = """
+.. _VS Code: https://code.visualstudio.com
+"""
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -82,5 +92,31 @@ sphinxemoji_style = 'twemoji'
 
 # -- Options for LaTeC output -------------------------------------------------
 latex_engine = 'lualatex'
-latex_elements = {}
-latex_elements['preamble'] = '\\usepackage{fontspec}\n'
+latex_elements = {
+    'tableofcontents': r"",
+    'preamble': r'''
+\expandafter\def\expandafter\LaTeX\expandafter{\expandafter\text\expandafter{\LaTeX}}
+
+''',
+    # https://tex.stackexchange.com/questions/572212/substituting-fonts-for-emojis-in-lualatex
+    # Reset defaults plus fallback for emojis
+    'fontpkg': r'''
+\directlua{luaotfload.add_fallback
+   ("emojifallback",
+    {
+        "NotoColorEmoji:mode=harf;",
+        "TwemojiMozilla:mode=harf;"
+    }
+   )}
+\setmainfont{FreeSerif}[
+  Extension      = .otf ,
+  UprightFont    = *,
+  BoldFont       = *Bold,
+  ItalicFont     = *Italic,
+  BoldItalicFont = *BoldItalic,
+  RawFeature={fallback=emojifallback}
+]
+\setsansfont{FreeSerif}
+\setmonofont{FreeMono}
+'''
+}
