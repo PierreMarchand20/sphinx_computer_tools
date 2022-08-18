@@ -6,7 +6,7 @@ Requirements
 
 This document assumes that you have a unix-like operating system (Linux, macOS, not Windows but see :ref:`sec-setup-windows`), so that you have access to a terminal (see :ref:`Bash <sec-bash>`). To follow along the presentations of each tool, you will need a `source code editor <https://en.wikipedia.org/wiki/Source-code_editor>`_ [#]_. There are a plethora of choices.
 
-In the following, I will often point out how each tool integrates with `VS Code`_ and its extensions, because this is the editor I use and recommend, but taste and colours are not always the same, so here is a non-exhaustive list of other free, cross-plateform and multipurpose source editors.
+In the following, I will often point out how each tool integrates with `VS Code`_ and its extensions, because this is the editor I use and recommend, but taste and colours are not always the same, so here is a non-exhaustive list of other free, cross-platform and multipurpose source editors.
 
 - Editors with text user interface: `emacs <https://www.gnu.org/software/emacs/>`_, `nano <https://www.nano-editor.org>`_, `vim <https://www.vim.org>`_ or `neovim <https://neovim.io>`_.
 - Editors with graphical user interface: `gEdit <https://wiki.gnome.org/Apps/Gedit>`_, `Sublime Text <https://www.sublimetext.com>`_.
@@ -25,7 +25,7 @@ Where to start
 
 Let's start from the beginning, you need to install VS Code on your workstation and learn how to use its basic editing features. Since I will not do better than the documentation, I refer to their `Setup page <https://code.visualstudio.com/docs/setup/setup-overview>`_ for the installation procedure, while you can look at their `Get Started page <https://code.visualstudio.com/docs/getstarted/introvideos>`_ and `Basic Editing page <https://code.visualstudio.com/docs/editor/codebasics>`_ for basic editing features.
 
-I want to highlight the `Tips and Tricks page <https://code.visualstudio.com/docs/getstarted/tips-and-tricks>`_, where it is mentioned for example that you can learn how to use basic editing (and more) using *walkthroughs* (on the right in the landing page of VS Code ). 
+I want to highlight the `Tips and Tricks page <https://code.visualstudio.com/docs/getstarted/tips-and-tricks>`_, where it is mentioned for example that you can learn how to use basic editing (and more) using *walkthroughs* (on the right in the landing page of VS Code). 
 
 .. .. _setup-vscode_walkthroughs:
 
@@ -86,4 +86,4 @@ In the context of this document, I suspect the first solution is easier to use s
 
 .. [#] Or at least you need to be able to modify files somehow. But if you are here, I guess you will not just use bash commands to do that, so a source editor is probably more suited. 
 
-.. [#] It means ``Ctrl``, expect on macOS where ``Cmd`` should be used instead.
+.. [#] It means ``Ctrl``, except on macOS where ``Cmd`` should be used instead.
