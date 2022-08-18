@@ -1,4 +1,5 @@
 
+.. _readme:
 
 Computer Tools
 ==============
@@ -13,6 +14,8 @@ This document is written in `Sphinx <https://www.sphinx-doc.org/en/master/>`_ an
 
 If you have any suggestions or questions, please contact me via my `personal webpage <https://pierremarchand.netlify.app>`_.
 
+.. _contribution:
+
 .. rubric:: Contribution
 
-If you have a GitHub account, you can directly suggest changes or correct typos via a pull request, either by clicking on the edit button in the top right of each page, or directly in the GitHub `repository <https://github.com/PierreMarchand20/sphinx_computer_tools>`_ containing the source of this website. If you are not familiar with pull request, you can also open an `issue <https://github.com/PierreMarchand20/sphinx_computer_tools/issues/new>`_.
+If you have a GitHub account, you can directly suggest changes or correct typos via a pull request, either by clicking on the edit button on the top right of each page, or directly in the GitHub `repository <https://github.com/PierreMarchand20/sphinx_computer_tools>`_ containing the source of this website. If you are not familiar with pull request, you can also open an `issue <https://github.com/PierreMarchand20/sphinx_computer_tools/issues/new>`_.

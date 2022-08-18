@@ -32,5 +32,5 @@ Unreleased
 Added
 -----
 
-- first draft of the introductions to some basic tools (bash and git)
+- first draft of the introductions to some basic tools (bash, git and ssh)
 - a section to introduce this document, with notes on the required setup to follow along the document and try out the presented tools.

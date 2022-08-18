@@ -1,7 +1,7 @@
 .. _sec-git:
 
 Git
-===
+###
 
 Git is an essential tool to collaborate and version your code. That is why, we will take the time to understand its benefits, and how to use it. The presentation will be organized around what git allows you to do: versioning, remote backup, synchronization and collaborative work.
 
@@ -25,8 +25,8 @@ We refer to this `page <https://git-scm.com/book/fr/v2/Démarrage-rapide-Install
 
 .. code:: bash
 
-   git config --global user.name "Alice"
-   git config --global user.email alice@mail.com
+   git config --global user.name "Username"
+   git config --global user.email username@mail.com
 
 Each modification you make to your repository will be associated with this identity.
 
@@ -51,7 +51,7 @@ This will create a hidden folder ``.git`` with all the information of the reposi
 
     .. note:: 
         
-        Remark that when the repository is created, ``(main #)`` is added to the command prompt. This is because I slightly customized my prompt command, as first mentioned :ref:`previously <sec-bash-variables>`. To add this information to the prompt command, I used `git-prompt.sh <https://github.com/git/git/blob/main/contrib/completion/git-prompt.sh>`_ as described `here <https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Bash>`_. It will show the name of the current branch (I will explain what it means in the next section) and the state of the local repository.
+        Remark that when the repository is created, ``(main #)`` is added to the command prompt. This is because I slightly customized my prompt command, as first mentioned :ref:`previously <sec-bash-variables>`. To add this information to the prompt command, I used `git-prompt.sh <https://github.com/git/git/blob/main/contrib/completion/git-prompt.sh>`_ as described `here <https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Bash>`__. It will show the name of the current branch (I will explain what it means in the next section) and the state of the local repository.
 
 Versioning
 ----------
@@ -100,7 +100,9 @@ Here, the name of the branch I created is called ``main`` [#]_.
 Navigating through the history
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that you populated your history’s repository, you may want to go back and check previous states of your repository. The current state on your computer (not necessarily the last one) is called ``HEAD``.
+Now that you populated your history’s repository, you may want to go back and check previous states of your repository. The current state on your computer (not necessarily the last one) is called ``HEAD``, see :numref:`git-fig-current`.
+
+.. _git-fig-current:
 
 .. figure:: ../_static/svg/git/HEAD_1.drawio.svg
 
@@ -110,23 +112,24 @@ The command ``git log`` shows your repository’s history, i.e., commit messages
 
 To navigate through your history, you can use
 
--  relative references: to check out the second generation ancestor of ``HEAD`` use ``HEAD~2``.
+-  relative references: to check out the second generation ancestor of ``HEAD`` use ``HEAD~2``, see :numref:`fig-git_checkout_head2`.
 
--  absolute references: using the commit ID, ``git checkout 291bb0`` (first characters are enough)
+-  to return to the last state of your repository, ``git checkout main``, see :numref:`fig-git_checkout_main`.
 
--  to return to the last state of your repository, ``git checkout main``.
+-  absolute references: using the commit ID, ``git checkout e9b2d0`` (first characters are enough), see :numref:`fig-git_checkout_e9b2d0`
 
-.. _git_fig_checkout_head2:
+
+.. _fig-git_checkout_head2:
 .. figure:: ../_static/svg/git/HEAD_3.drawio.svg
 
     ``git checkout HEAD~2``
 
-
+.. _fig-git_checkout_main:
 .. figure:: ../_static/svg/git/HEAD_1.drawio.svg
 
     ``git checkout main``
 
-
+.. _fig-git_checkout_e9b2d0:
 .. figure:: ../_static/svg/git/HEAD_2.drawio.svg
 
     ``git checkout e9b2d0``
@@ -159,14 +162,16 @@ Another advantage of git is the possibility to back up your repository in a remo
 Set up the remote
 ^^^^^^^^^^^^^^^^^
 
-First, you need to create a remote repository in `GitHub <https://github.com>`__, `GitLab <https://about.gitlab.com>`__, `Bitbucket <https://bitbucket.org/>`__ or some other providers (or your own git server). For example, using GitHub:
+First, you need to create a remote repository in `GitHub <https://github.com>`__, `GitLab <https://about.gitlab.com>`__, `Bitbucket <https://bitbucket.org/>`__ or some other providers (or your own git server).
+
+.. _git-fig-github:
 
 .. figure:: ../_static/png/git/github.png
    :alt: GitHub
 
    GitHub
 
-As described in the previous figure, we need to add the remote URL to the local repository with
+Providers will usually give you instructions on how to set up your repository (see :numref:`git-fig-github` for example). In any case, we need to add the remote URL to the local repository with
 
 .. code:: bash
 
@@ -178,12 +183,15 @@ The remote is then referenced as ``origin``. And, we need to push the local comm
 
    git push -u origin main
 
-We have now a remote branch ``origin/main``, which is the copy on the remote ``origin`` of ``main``.
+We have now a remote branch ``origin/main``, which is the copy on the remote ``origin`` of ``main`` as described in :numref:`git-fig-remote`.
+
+.. _git-fig-remote:
 
 .. figure:: ../_static/svg/git/remote.drawio.svg
 
     Remote added
 
+.. note:: The example uses a https URL, but you can also connect to a git server via a :ref:`sec-ssh` URL. This can be useful to avoid having to give a username and a password each time you want to update the remote repository.
 
 .. only:: not latex
 
@@ -197,9 +205,9 @@ We have now a remote branch ``origin/main``, which is the copy on the remote ``o
 Working with a remote repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now, we create a new commit locally, so that the branch ``main`` is further than the branch ``origin/main`` on the remote.
+Now, we create a new commit locally, so that the branch ``main`` is further than the branch ``origin/main`` on the remote (see :numref:`fig-git-local-new-commit`).
 
-.. _git_fig_local_new_commit:
+.. _fig-git-local-new-commit:
 .. figure:: ../_static/svg/git/remote_1.drawio.svg
 
     Local new commit
@@ -222,23 +230,30 @@ Having a remote repository, you can also use it to synchronize a repository on s
 Update from remote
 ^^^^^^^^^^^^^^^^^^
 
-Imagine you create a new commit locally on ``Computer 2``, then you push this new commit to the remote repository. This time, it is ``origin/main`` that is further than ``main`` from the point of view of ``Computer 1``!
+Imagine you create a new commit locally on ``Computer 2``, then you push this new commit to the remote repository. This time, it is ``origin/main`` that is further than ``main`` from the point of view of ``Computer 1``! We are in the situation illustrated by :numref:`git-fig-remote-2`.
+
+.. _git-fig-remote-2:
 
 .. figure:: ../_static/svg/git/remote_2.drawio.svg
 
     Repository on ``Computer 1``
 
 
-To update your local repository, you just need to call ``git pull`` on ``Computer 1``, and it will update ``main`` adding the last commits from ``origin/main``. This is called a *fast-forward merge*, because there is no divergent branches, git just needs to move the pointer of the local branch (here ``main``) forward to the tip of the remote branch (here ``origin/main``).
+To update your local repository, you just need to call ``git pull`` on ``Computer 1``, and it will update ``main`` adding the last commits from ``origin/main``. This is called a *fast-forward merge*, because there is no divergent branches, git just needs to update the local copy of ``origin/main`` to get the last changes and to move the pointer of the local branch (here ``main``) forward to the tip of the remote branch (here ``origin/main``).
+
+.. note:: ``git pull`` can be seen as the combination of two commands:
+
+    - ``git fetch`` for the local branch. In our case, it updates the local copy of ``origin/main``.
+    - ``git merge``, which in the present case will do a fast-forward merge.
 
 .. _sec-git-issue:
 
 Issue
 ^^^^^
 
-Something wrong can quickly happen with bad practices. Imagine you do a new commit locally on both computers. You push your new local commits from ``Computer 2`` to the remote repository. This time, ``main`` and ``origin/main`` have diverged from the point of view of ``Computer 1``!
+Something wrong can quickly happen with bad practices. Imagine you do a new commit locally on both computers. You push your new local commits from ``Computer 2`` to the remote repository. This time, ``main`` and ``origin/main`` have diverged from the point of view of ``Computer 1``, which is described in :numref:`git-fig-remote-3`.
 
-.. _git_fig_remote_3:
+.. _git-fig-remote-3:
 
 .. figure:: ../_static/svg/git/remote_3.drawio.svg
 
@@ -254,7 +269,7 @@ In case you still encounter this situation (you forgot to commit a change, or to
 Collaboration
 -------------
 
-If you want to collaborate with someone else, or if you work with a team on a project, then the previous :ref:`issue <sec-git-issue>` may occur more often. It is very likely that your coworkers will commit some changes while you are also working on the repository, so that, you will be in the situation described in the :numref:`git_fig_remote_3` with divergent branches. To avoid this, you need to adopt a workflow, i.e., a way to work all together with the git repository. There are several solutions depending on how you work with your team/coworkers, the number of contributors, etc. It is an advanced subject, and I give some pointers for more information in the :ref:`references <git_references_specific_discussions>`.
+If you want to collaborate with someone else, or if you work with a team on a project, then the previous :ref:`issue <sec-git-issue>` may occur more often. It is very likely that your coworkers will commit some changes while you are also working on the repository, so that, you will be in the situation described in the :numref:`git-fig-remote-3` with divergent branches. To avoid this, you need to adopt a workflow, i.e., a way to work all together with the git repository. There are several solutions depending on how you work with your team/coworkers, the number of contributors, etc. It is an advanced subject, and I give some pointers for more information in the :ref:`references <git_references_specific_discussions>`.
 
 But here are some general considerations shared by most of them. They usually aim at:
 
@@ -262,6 +277,8 @@ But here are some general considerations shared by most of them. They usually ai
 -  avoiding situations with diverging branches, and thus, limiting the risks of breaking your code.
 
 And, they usually rely on one of the two following git operations, if not both: ``git merge`` and ``git rebase``. Both commands allow merging two branches, but the outcome is different as we will see.
+
+.. _git-collaboration-merge:
 
 Merge
 ^^^^^
@@ -294,9 +311,9 @@ On ``Computer 2``, we modify it to
 
 The first line is modified by ``Computer 1``, and the third line is modified by ``Computer 2``.
 
-Now, we commit both changes locally, we push the modifications by ``Computer 2``, and pull on ``Computer 1``. Note that git is safe, if you try to push changes from ``Computer 1``, it will be rejected because ``main`` on ``Computer 1`` is behind ``origin/main``. When pulling on ``Computer 1``, because the modifications from both computers are not overlapping, git actually proceeds to merge automatically the changes, and create a commit stating the merge. Then, you just need to push on ``Computer 1``, and pull on ``Computer 2``, and we obtain a history like this:
+Now, we commit both changes locally, we push the modifications by ``Computer 2``, and pull on ``Computer 1``. Note that git is safe, if you try to push changes from ``Computer 1``, it will be rejected because ``main`` on ``Computer 1`` is behind ``origin/main``. When pulling on ``Computer 1``, because the modifications from both computers are not overlapping, git actually proceeds to merge automatically the changes, and create a commit stating the merge. Then, you just need to push on ``Computer 1``, and pull on ``Computer 2``, and we obtain a history as :numref:`git-fig-merging`.
 
-.. _git_fig_merging:
+.. _git-fig-merging:
 .. figure:: ../_static/svg/git/merge.drawio.svg
 
     Merging
@@ -311,7 +328,7 @@ Now, we commit both changes locally, we push the modifications by ``Computer 2``
     .. asciinema:: ../_static/asciicast/git/automerge_output.cast
         :rows: 35
 
-    .. note::  If you try to reproduce this example, ``git`` will open your editor to write a commit message (``nano`` by default). But for auto merges like this, the commit message is already written and you can just close your editor. I removed this behavior of opening my editor in case of auto merge for the sake of the live example, but you should keep this behavior.
+    .. note::  If you try to reproduce this example, ``git`` will open your editor to write a commit message (``nano`` by default). But for auto merges like this, the commit message is already written and you can just close your editor. I removed this behaviour of opening the editor in case of auto merge for the sake of the live example, but you should keep this behaviour.
 
 
 Let us look at the case where the modifications are overlapping. On ``Computer 2``, we do the following change instead:
@@ -349,14 +366,29 @@ We see the change from the local ``HEAD`` (so, ``Computer 1``), and the change f
 Rebase
 ^^^^^^
 
-While ``git merge`` creates a new commit, as illustrated :ref:`here <git_fig_merging>`, ``git rebase`` changes the base of one branch to put it after the last commit of the other branch. Taking the same example illustrated :ref:`here <git_fig_remote_3>`, we can do ``git fetch origin`` on ``Computer 1`` to update the local copy of ``origin/main``, and then ``git rebase origin/main`` to obtain:
+While ``git merge`` creates a new commit, as illustrated :ref:`here <git-fig-merging>`, ``git rebase`` changes the base of one branch to put it after the last commit of the other branch. Taking the same example illustrated :ref:`here <git-fig-remote-3>`, we can do ``git fetch origin`` on ``Computer 1`` to update the local copy of ``origin/main``, and then ``git rebase origin/main``. Git will start an "interactive rebase", reviewing each commit from the diverged part of ``main``, one after the other, to check if there are overlapping differences with ``origin/main``. 
+
+If there are overlapping differences between a commit from ``main`` and ``origin/main``, you need to fix them, then use ``git add`` with the fixed files which will modify the current reviewed commit and use ``git rebase --continue`` to go onto the next commit to review in the interactive rebase. 
+
+With the example from :numref:`git-fig-remote-3`, using a rebase strategy instead of merge will produce a linear history, see :numref:`git-fig-rebase`.
+
+.. _git-fig-rebase: 
 
 .. figure:: ../_static/svg/git/rebase.drawio.svg
 
     Rebasing
 
-where the diverged commit ``e9b2d0a`` is now behind ``30f00e3``. We moved the base of ``main`` to the tip of ``origin/main``. This is particularly useful to avoid an additional commit, and in the case of two different branches, it allows preserving both history. But, there is one `golden rule <https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing>`__ when using ``git rebase``. It should **not be used with public branches** For example, you should not rebase ``origin/main`` instead of ``main``, because it would modify the commit history of the branch shared with others.
+where the diverged commit ``e9b2d0a`` is now behind ``30f00e3``. We moved the base of ``main`` to the tip of ``origin/main``. 
 
+.. note:: In recent versions of git, you can use ``git pull`` instead of using ``git fetch`` and ``git rebase`` to apply the same strategy. As mentioned in :ref:`git-collaboration-merge`, you need to change its default behaviour with ``git config --global pull.rebase true`` to do so.
+
+This is particularly useful to avoid an additional commit, and in the case of two different branches, it allows preserving both history. But, there is one `golden rule <https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing>`_ when using ``git rebase``. It should **not be used with public branches** For example, you should not rebase ``origin/main`` instead of ``main``, because it would modify the commit history of the branch shared with other workstation/people.
+
+.. only:: not latex
+
+    .. asciinema:: ../_static/asciicast/git/rebase_output.cast
+
+    In this example, the default behaviour of ``git pull`` is set to rebase. Don't mind the ``sed`` command, it is just to modify a file directly from the terminal, you could use an editor you want instead.
 
 Notes for VS Code users
 -----------------------
@@ -372,7 +404,7 @@ VS Code will also display information directly in the editor.
 - `Gutter indicators <https://code.visualstudio.com/docs/editor/versioncontrol#_gutter-indicators>`_: when opening modified in files in the editor, VS Code will add an indicator on the left to the modified lines.
 - `Merge conflics <https://code.visualstudio.com/docs/editor/versioncontrol#_merge-conflicts>`_: it will add colours to merge conflicts, and buttons to accept either one or both change.
 
-You can find the documentation `here <https://code.visualstudio.com/docs/editor/versioncontrol#_git-support>`_ with all the features. But git integration in VS Code can go even further with additional extensions.
+You can find the documentation `here <https://code.visualstudio.com/docs/editor/versioncontrol#_git-support>`__ with all the features. But git integration in VS Code can go even further with additional extensions.
 
 - `GitLens <https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens>`_ adds an enormous amount of git-related features, among which, 
 

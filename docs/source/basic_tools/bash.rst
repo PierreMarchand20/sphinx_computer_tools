@@ -48,9 +48,9 @@ Terminology
 Filesystem
 ==========
 
-Files are usually displayed in a hierarchical tree structure, where each node is a directory. In :ref:`directory_hierarchy`, you can see a typical filesystem for an operating system with two users, Alice and Bob. Both of them have their own directory, called *home directory*, where they can put their documents, install their software programs, etc. Every file and directory is under the *root* directory ``/``, which is literally the root of the hierarchical tree structure.
+Files are usually displayed in a hierarchical tree structure, where each node is a directory. In :numref:`bash-fig-directory-hierarchy`, you can see a typical filesystem for an operating system with two users, Alice and Bob. Both of them have their own directory, called *home directory*, where they can put their documents, install their software programs, etc. Every file and directory is under the *root* directory ``/``, which is literally the root of the hierarchical tree structure.
 
-.. _directory_hierarchy:
+.. _bash-fig-directory-hierarchy:
 
 .. figure:: ../_static/svg/terminal_bash/directory_hierarchy.drawio.svg
 
@@ -93,7 +93,7 @@ and many others... It also sets a number of other variables (that you can also p
 
 .. only:: not latex
 
-   In the following asciinema examples, I will use a customized prompt that displays the current directory followed by the character ``$``. 
+   In the following asciinema examples, I will use a customized prompt that displays the current directory followed by a line break and the character ``$``. 
 
 Navigation
 ==========
@@ -120,19 +120,19 @@ Then, you can check that you are at the root directory using again ``pwd``.
    - Calling ``cd ..`` changes the current directory to its parent directory.
 
 .. note:: 
-   - You can make a path combining different shortcuts, for example ``cd ~/../..`` will change the current directory to the root directory in the previous :ref:`example <directory_hierarchy>` (home directory, then go up two levels).
+   - You can make a path combining different shortcuts, for example ``cd ~/../..`` will change the current directory to the root directory in the previous :ref:`example <bash-fig-directory-hierarchy>` (home directory, then go up two levels).
 
 
 To know where to go, you may need to know what are the files and directory contained in a given directory. You can use ``ls`` (**l**\ ist **f**\ iles) to print them out.
 
 .. only:: not latex
 
-   Here is a small example illustrating the previous commands where the structure is the same as in :ref:`directory_hierarchy`.
+   Here is a small example illustrating the previous commands where the structure is the same as in :numref:`bash-fig-directory-hierarchy`.
 
    .. asciinema:: ../_static/asciicast/bash/navigation_output.cast
       :rows: 19
 
-Change 
+Change to the filesystem
 ==========================
 
 We can now start to modify the hierarchical structure adding and removing files and directories.
@@ -165,7 +165,7 @@ We can now start to modify the hierarchical structure adding and removing files 
 
 .. only:: not latex
 
-   Here is a small example illustrating the previous commands where the structure is the same as in :ref:`directory_hierarchy`.
+   Here is a small example illustrating the previous commands where the structure is the same as in :ref:`bash-fig-directory-hierarchy`.
 
    .. asciinema:: ../_static/asciicast/bash/change_structure_output.cast
       :rows: 30
@@ -175,14 +175,14 @@ Tips and tricks
 
 .. rubric:: Autocompletion 
    
-Use ``tab`` to autocomplete paths. When writing the beginning of path, hit ``tab`` to autocomplete. If there is not a unique possibility, it will display the different possibility.
+Use ``tab`` to autocomplete paths. When writing the beginning of path, use ``tab`` to autocomplete. If there is not a unique possibility, it will display the different possibility.
 
 .. only:: not latex
 
    .. asciinema:: ../_static/asciicast/bash/autocompletion_output.cast
       :rows: 11
 
-   In this example, I hit ``tab`` on the second line to avoid writing the long name of the directory.
+   In this example, I use ``tab`` on the second line to avoid writing the long name of the directory.
 
 .. rubric:: Navigate in your history
 
@@ -204,16 +204,20 @@ Use ``ctrl-r`` to look for previous command calls. Use ``ctrl-r`` and type the b
    .. asciinema:: ../_static/asciicast/bash/backward_search_output.cast
       :rows: 15
 
-   In this example, I hit ``ctrl-r`` once, I then start to write ``tou`` so that it displays the last command starting by *tou*, and finally hit again ``ctrl-r`` to search for the previous command starting by *tou*.
+   In this example, I use ``ctrl-r`` once, I then start to write ``tou`` so that it displays the last command starting by *tou*, and finally use again ``ctrl-r`` to search for the previous command starting by *tou*.
 
 .. rubric:: Man page
 
-To learn how to use a command, use the command ``man`` with the name of the command as argument. For example ``man echo`` displays to manual for the command ``echo`` (hit ``q`` to leave).
+To learn how to use a command, use the command ``man`` with the name of the command as argument. For example ``man echo`` displays to manual for the command ``echo`` (type ``q`` to leave).
 
 .. only:: not latex
       
    .. asciinema:: ../_static/asciicast/bash/man_page_output.cast
       :rows: 26
+
+.. rubric:: explainshell.com
+
+This `website <https://explainshell.com>`_ explains commands and their flags. Just write down ``echo -e``, then it will show you what ``echo`` is for, and what ``-e`` means for this command. It is a more visual way to access to the man page mentioned above for a given command and the specific flags you used. Note that I am not affiliated to this website.
 
 Notes for VS Code users
 =======================
@@ -223,7 +227,7 @@ As we previously mentioned, VS Code comes with its own `terminal <https://code.v
 That being said, I should point out that VS Code's terminal has some nice features you should be aware of, for examples:
 
 - Terminal processes are `restored <https://code.visualstudio.com/docs/terminal/basics#_terminal-process-reconnection>`_ on window reload, if you reload your VS Code window for example, it will not kill your shell session.
-- Every path or URL displayed in the terminal is a `link <https://code.visualstudio.com/docs/terminal/basics#_links>`_, meaning you can left-click holding ``Ctrl/Cmd`` [#]_ to use it (as in the editor). For a file, it will open it an editor, which is very useful when compiling or debugging.
+- Every path or URL displayed in the terminal is a `link <https://code.visualstudio.com/docs/terminal/basics#_links>`_, meaning you can left-click holding ``Ctrl/Cmd`` [#]_ to use it (as in the editor). For a file, it will open it in an editor, which is very useful when compiling or debugging.
 - You can use "`Find <https://code.visualstudio.com/docs/terminal/basics#_find>`_" in the terminal using ``Ctrl/Cmd+f`` as you would expect.
 
 VS Code also added recently a new feature called `Terminal Shell Integration <https://code.visualstudio.com/docs/terminal/shell-integration>`_. For common shells (including bash), VS Code can understand what is happening inside the shell, which allows him to add some other nice features, for example:
