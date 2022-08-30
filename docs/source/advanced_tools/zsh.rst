@@ -3,20 +3,21 @@
 Terminal - ZSH
 ##############
 
-There is a steep learning curve to use a terminal so today, we will see how to improve your terminal experience with the Z shell, also called zsh. It is an alternative to bash, and it is going to be the `default shell on macOS <https://support.apple.com/en-us/HT208050>`_  starting from Catalina 10.5.
+It is an alternative to bash, and it is going to be the `default shell on macOS <https://support.apple.com/en-us/HT208050>`_  starting from Catalina 10.5.
 
 Z Shell
 ===========
 
-We are interested in ``zsh``, which is a shell derived from the Bourne shell ``sh``, like ``bash`` we discussed :ref:`here <sec-bash>`. It is the reason why they both share a lot of features. If you already know how to use ``bash`` (``cd``, ``mv``, ``touch``, ``mkdir``, …), don’t worry, you won’t start from scratch again. Note that to make it your default shell, you can use:
+``zsh`` is a shell derived from the Bourne shell ``sh``, like ``bash`` we discussed :ref:`here <sec-bash>`. It is the reason why they both share a lot of features. If you already know how to use ``bash`` (``cd``, ``mv``, ``touch``, ``mkdir``, …), don’t worry, you won’t start from scratch again. Note that to make it your default shell, you can use:
 
 .. code:: bash
 
    chsh -s $(which zsh)
 
-Personally, I mainly use a shell interactively, meaning that I do not write so many shell scripts, so I will mainly focus on this usage. Note that you can use any shell interactively and any other shell in scripts using a `shebang <https://en.wikipedia.org/wiki/Shebang_(Unix)>`__ (``#!/usr/bin/env bash`` for bash) at the beginning of your shell scripts.
 
-Here are some features of zsh that I like and often use (see next `section <#3-plugin-managers>`__ to activate all of them):
+.. note:: You can use any shell interactively, and if you write a script, you can specify the shell using a `shebang <https://en.wikipedia.org/wiki/Shebang_(Unix)>`__ (``#!/usr/bin/env bash`` for bash) at the beginning of your shell scripts.
+
+Here are some interesting features of zsh (see next `section <#3-plugin-managers>`__ to activate all of them):
 
 
 
@@ -71,13 +72,13 @@ The `installation <https://github.com/zimfw/zimfw#installation>`__ process is qu
 Prompts
 =======
 
-The benefit in customizing your prompt is that it allows you to display more information. ``git``, that we introduced in :ref:`here <sec-git>`), is the usual first example. You can display the current branch, and if there are modifications to be committed. But you can also display timing between commands, battery level, and a lot of other information. I personally like to keep it simple, but you do you |:wink:|
+The benefit in customizing your prompt is that it allows you to display more information. ``git``, that we introduced in :ref:`here <sec-git>`), is the usual first example. You can display the current branch, and if there are modifications to be committed. But you can also display timing between commands, battery level, and a lot of other information. I personally like to keep it simple, but you do you 😉
 
 Similarly to plugins, you could define a customized prompt by hand. But the risk is to add a delay each time you enter a command because of the loading time of the prompt.
 
 Similar problem, similar solution: people have already defined optimized prompts that allow for customization while avoiding delay most of the time. Two popular prompts are `Spaceship ZSH <https://github.com/denysdovhan/spaceship-prompt>`__ and `Powerlevel10k <https://github.com/romkatv/powerlevel10k>`__. I personally use the latter at the moment, but they are both fast, customizable and easy to use. The `installation <https://github.com/romkatv/powerlevel10k#get-started>`__ process is quite straightforward, and the configuration is done interactively.
 
-Here is an example with Powerlevel10k where I show current folder, current git status (notice the ``?1``, which means there is one file not tracked), python virtual environment, time, and a custom prompt that shows |:star:| with ``my display``.
+Here is an example with Powerlevel10k where I show current folder, current git status (notice the ``?1``, which means there is one file not tracked), python virtual environment, time, and a custom prompt that shows ⭐ with ``my display``.
 
 .. asciinema:: ../_static/asciicast/zsh/prompt.cast
     :rows: 10
@@ -87,22 +88,22 @@ Here is an example with Powerlevel10k where I show current folder, current git s
 References
 ==========
 
-Z Shell
-~~~~~~~
+.. rubric:: Z Shell
+
 
 -  `Website <http://zsh.sourceforge.net>`__ of zsh.
 -  `Some features <https://github.com/hmml/awesome-zsh>`__ of zsh
 -  `Resources <https://github.com/unixorn/awesome-zsh-plugins#generic-zsh>`__ about zsh.
 -  Bash vs zsh on `Stackexchange <https://apple.stackexchange.com/questions/361870/what-are-the-practical-differences-between-bash-and-zsh>`__
 
-Plugin managers
-~~~~~~~~~~~~~~~~~~~~
+.. rubric:: Plugin managers
+
 
 -  Some plugin managers: `zim <https://github.com/zimfw/zimfw>`__, `oh my zsh <https://ohmyz.sh>`__, `antigen <https://github.com/zsh-users/antigen>`__, `zplug <https://github.com/zplug/zplug>`__, `zinit <https://github.com/zdharma/zinit>`__, …
 -  Benchmarks for plugin managers: `zim benchmarks <https://github.com/zimfw/zimfw/wiki/Speed>`__, a Reddit `thread <https://www.reddit.com/r/zsh/comments/ak0vgi/a_comparison_of_all_the_zsh_plugin_mangers_i_used/>`__.
 -  a Reddit `thread <https://www.reddit.com/r/zsh/comments/bj6rwz/what_is_a_good_ohmyzsh_alternative/>`__ on plugin managers.
 
-Prompts
-~~~~~~~~~~~~
+.. rubric:: Prompts
+
 
 -  Customizable and efficient prompts: `Powerlevel10k <https://github.com/romkatv/powerlevel10k>`__, `Spaceship <https://github.com/denysdovhan/spaceship-prompt>`__
