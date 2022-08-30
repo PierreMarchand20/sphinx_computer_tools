@@ -34,6 +34,7 @@ extensions = [
     'sphinxcontrib.asciinema',
     'sphinxcontrib.rsvgconverter',
     'sphinx_copybutton',
+    'sphinx_contributors'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -87,8 +88,6 @@ sphinxcontrib_asciinema_defaults = {
     # 'font-size': '25',
     # 'path': '_static/asciicast/'
 }
-
-sphinxemoji_style = 'twemoji'
 
 # -- Options for LaTeC output -------------------------------------------------
 latex_engine = 'lualatex'

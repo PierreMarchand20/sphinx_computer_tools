@@ -16,6 +16,15 @@ If you have any suggestions or questions, please contact me via my `personal web
 
 .. _contribution:
 
-.. rubric:: Contribution
+.. rubric:: Contribute
 
 If you have a GitHub account, you can directly suggest changes or correct typos via a pull request, either by clicking on the edit button on the top right of each page, or directly in the GitHub `repository <https://github.com/PierreMarchand20/sphinx_computer_tools>`_ containing the source of this website. If you are not familiar with pull request, you can also open an `issue <https://github.com/PierreMarchand20/sphinx_computer_tools/issues/new>`_.
+
+.. rubric:: Contributors
+
+Thank you to the people who helped to improve this document!
+
+..  contributors:: PierreMarchand20/sphinx_computer_tools
+    :contributions: 
+    :exclude: PierreMarchand20
+    
