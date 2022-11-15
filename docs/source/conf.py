@@ -103,8 +103,7 @@ latex_elements = {
 \directlua{luaotfload.add_fallback
    ("emojifallback",
     {
-        "NotoColorEmoji:mode=harf;",
-        "TwemojiMozilla:mode=harf;"
+        "NotoColorEmoji:mode=harf;"
     }
    )}
 \setmainfont{FreeSerif}[

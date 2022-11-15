@@ -1,5 +1,5 @@
-Setup
-=====
+To follow along
+===============
 
 Requirements
 ------------
@@ -52,8 +52,8 @@ In particular, the walkthroughs "Get Started" and "Editor Playground" are really
 - use multi-cursor, snippets, intellisense, ...
 - and much more!
 
-Extensions to help your start
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Extensions to help you start
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once you took a look at the previous references, you should know how to install extensions on the marketplace (*View > Extensions* otherwise). I will only give here some extensions that I think are generally useful and that I used to write this document.
 
