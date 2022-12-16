@@ -75,7 +75,7 @@ Once the pair of public and private keys is created, you need to send the *publi
 
 .. code-block:: bash
 
-    ssh-id-copy username@hostname
+    ssh-copy-id username@hostname
 
 If the public key name differs from the default, add the flag ``-i path/to/my_id_rsa.pub``.
 
