@@ -7,7 +7,7 @@ Git is an essential tool to collaborate and version your code. That is why, we w
 
 Each one of these usages will require the previous ones. For example, you need to know how to version your code to use a remote backup, but you do not need to know a priori how to use git for collaborative work. So that, you can start by reading just what you need. If you want to go further, I give some :ref:`references <git_ref>` to other concepts in git that I do not talk about here.
 
-Note that I present command lines to use git, but there exists a lot of graphical interfaces (see this `list <https://git-scm.com/downloads/guis>`__), but understanding how git works is still necessary to use them. You can also find a `presentation <https://pierremarchand20.github.io/slides/2019_01_10_infomath_git/#1>`_ I did a few years ago on git with a similar approach.
+Note that I present command lines to use git, but there exists a lot of graphical interfaces (see this `list <https://git-scm.com/downloads/guis>`__), but understanding how git works is still necessary to use them. You can also find a `presentation <https://pierremarchand20.github.io/slides/2019_01_10_infomath_git>`_ I did a few years ago on git with a similar approach.
 
 .. only:: not latex
 
@@ -395,22 +395,21 @@ Notes for VS Code users
 
 VS Code already comes with an extension for git, so that you can do most of the basic git commands (push, pull, add, commit, ...) directly via the graphical interface of VS Code. Everything is in "Source Control" in the Activity bar on the left. You can also access it via *View > Source Control*.
 
-- `Changes <https://code.visualstudio.com/docs/editor/versioncontrol#_git-support>`_: you can find an overview of all the changes, and if you click on a modified file, it will display the modifications of the file.
-- `Commit <https://code.visualstudio.com/docs/editor/versioncontrol#_commit>`_: you can select the changes you want to add, write a commit message and commit.
+- `Changes <https://code.visualstudio.com/docs/sourcecontrol/overview#_working-in-a-git-repository>`_: you can find an overview of all the changes, and if you click on a modified file, it will display the modifications of the file.
+- `Commit <https://code.visualstudio.com/docs/sourcecontrol/overview#_commit>`_: you can select the changes you want to add, write a commit message and commit.
 - etc.
 
 VS Code will also display information directly in the editor.
 
-- `Gutter indicators <https://code.visualstudio.com/docs/editor/versioncontrol#_gutter-indicators>`_: when opening modified in files in the editor, VS Code will add an indicator on the left to the modified lines.
-- `Merge conflics <https://code.visualstudio.com/docs/editor/versioncontrol#_merge-conflicts>`_: it will add colours to merge conflicts, and buttons to accept either one or both change.
+- `Gutter indicators <https://code.visualstudio.com/docs/sourcecontrol/overview#_gutter-indicators>`_: when opening modified in files in the editor, VS Code will add an indicator on the left to the modified lines.
+- `Merge conflics <https://code.visualstudio.com/docs/sourcecontrol/overview#_merge-conflicts>`_: it will add colours to merge conflicts, and buttons to accept either one or both change.
 
-You can find the documentation `here <https://code.visualstudio.com/docs/editor/versioncontrol#_git-support>`__ with all the features. But git integration in VS Code can go even further with additional extensions.
+You can find the documentation `here <https://code.visualstudio.com/docs/sourcecontrol/overview>`__ with all the features. But git integration in VS Code can go even further with additional extensions.
 
 - `GitLens <https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens>`_ adds an enormous amount of git-related features, among which, 
 
-  - `Commits Views <https://github.com/gitkraken/vscode-gitlens#commits-view->`_ which lists all the commits of the current branch and provide quick access to the modified files in each commit (and show the modifications when clicking on it).
-  - Similarly, it provides other view panels for the `repository <https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens#repositories-view>`_, the `file history <https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens#repositories-view>`_, the `line history <https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens#visual-file-history-view->`_, ...
-  - `Current line blame <https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens#current-line-blame->`_ which shows a blame annotation (author, date and message from the current line's most recent commit) at the end of the current line.
+  - `Enriched Source controle view <https://github.com/gitkraken/vscode-gitlens#source-control>`_ with a list of all the commits of the current branch and provide quick access to the modified files in each commit (and show the modifications when clicking on it).
+  - `Information <https://github.com/gitkraken/vscode-gitlens#blame-codelens-and-hovers>`_ directly to the editor, with for example, blame annotations (author, date and message from the current line's most recent commit) at the end of the current line, and much more
   - And a lot more!
 
 - `Git Graph <https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph>`_ displays a graphical representation of the repository, from which you can also do most the git commands.
@@ -438,7 +437,7 @@ References
 .. rubric:: Other references
 
 -  `Tutorial <https://infomath.pages.math.cnrs.fr/tutorial/git/>`__ of Infomath
--  multilingual interactive `git cheatsheet <http://ndpsoftware.com/git-cheatsheet.html#loc=workspace;>`_ 
+-  multilingual interactive `git cheatsheet <http://ndpsoftware.com/git-cheatsheet.html>`_ 
 - open source game `Oh My Git! <https://ohmygit.org>`_ 
 
 .. rubric:: To go further

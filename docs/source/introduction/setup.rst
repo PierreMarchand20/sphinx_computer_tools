@@ -76,7 +76,7 @@ I recommend using a unix-like operating system to code, because most of the tool
 
 If you still want to use Windows, there are actually alternatives to a full unix-like system.
 
-- Recent versions of Windows actually comes with an "embedded Linux kernel", this feature is called `Windows Subsystem for Linux <https://docs.microsoft.com/en-us/windows/wsl/>`_ (WSL). You can run a GNU/Linux environment directly on Windows, but this is not enabled by default. I refer to its documentation for the `installation <https://docs.microsoft.com/en-us/windows/wsl/install>`_, but I want to highlight the tutorial part of the documentation, and more precisely the page on `Best practices for set up <https://docs.microsoft.com/en-us/windows/wsl/setup/environment>`_ which gives a lot of information.
+- Recent versions of Windows actually comes with an "embedded Linux kernel", this feature is called `Windows Subsystem for Linux <https://learn.microsoft.com/en-us/windows/wsl/>`_ (WSL). You can run a GNU/Linux environment directly on Windows, but this is not enabled by default. I refer to its documentation for the `installation <https://learn.microsoft.com/en-us/windows/wsl/install>`_, but I want to highlight the tutorial part of the documentation, and more precisely the page on `Best practices for set up <https://learn.microsoft.com/en-us/windows/wsl/setup/environment>`_ which gives a lot of information.
 - There exist tools that provide a unix-like environment on top of Windows: `Cygwin <https://cygwin.com>`_ and `MinGW-w64 <https://www.mingw-w64.org>`_ for example.
 - Another option is to install Linux with a dual boot, but it may be quite involved.
 

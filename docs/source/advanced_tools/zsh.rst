@@ -65,7 +65,7 @@ Plugin managers
 
 As we have seen, some features are available via plugins. You could install them by hand, each repository explains how to do it. Usually you have to download them, source them in your ``.zshrc`` and set some variables. But it can be tricky because the order in which you source them matters, and having a lot of plugins can add a delay when starting a new shell session.
 
-Another possibility is to use a *plugin manager*. There are a lot of them (see `reference <#53-plugin-managers>`__), I personally use `Zim <https://github.com/zimfw/zimfw>`__ that I find fast and easy to use. Besides, it is well-maintained, and the maintainers were quite helpful when I had a question. I tried to use a few other plugin managers, most of them are great, but some added a delay when starting a new shell session, and that is how I tried ``Zim``, which is marketed as `fast <https://github.com/zimfw/zimfw/wiki/Speed>`__. I was also convinced by the fact they `thought <https://github.com/zimfw/zimfw/issues/88>`__ about how their project should grow.
+Another possibility is to use a *plugin manager*. There are a lot of them (see `reference <#53-plugin-managers>`__), I personally use `Zim <https://github.com/zimfw/zimfw>`__ that I find fast and easy to use. Besides, it is well-maintained, and the maintainers were quite helpful when I had a question. I tried to use a few other plugin managers, most of them are great, but some added a delay when starting a new shell session, and that is how I tried ``Zim``, which is marketed as `fast <https://github.com/zimfw/zimfw/wiki/Speed>`__. I was also convinced by the fact they `thought <https://github.com/zimfw/zimfw/discussions/88>`__ about how their project should grow.
 
 The `installation <https://github.com/zimfw/zimfw#installation>`__ process is quite simple, and default configuration should give you most of the features described previously. To add or remove modules, you need to add a line with ``zmodule`` in ``.zimrc`` and run ``zimfw install``. See documentation `here <https://github.com/zimfw/zimfw#zmodule>`__.
 
@@ -76,7 +76,7 @@ The benefit in customizing your prompt is that it allows you to display more inf
 
 Similarly to plugins, you could define a customized prompt by hand. But the risk is to add a delay each time you enter a command because of the loading time of the prompt.
 
-Similar problem, similar solution: people have already defined optimized prompts that allow for customization while avoiding delay most of the time. Two popular prompts are `Spaceship ZSH <https://github.com/denysdovhan/spaceship-prompt>`__ and `Powerlevel10k <https://github.com/romkatv/powerlevel10k>`__. I personally use the latter at the moment, but they are both fast, customizable and easy to use. The `installation <https://github.com/romkatv/powerlevel10k#get-started>`__ process is quite straightforward, and the configuration is done interactively.
+Similar problem, similar solution: people have already defined optimized prompts that allow for customization while avoiding delay most of the time. Two popular prompts are `Spaceship ZSH <https://github.com/spaceship-prompt/spaceship-prompt>`__ and `Powerlevel10k <https://github.com/romkatv/powerlevel10k>`__. I personally use the latter at the moment, but they are both fast, customizable and easy to use. The `installation <https://github.com/romkatv/powerlevel10k#getting-started>`__ process is quite straightforward, and the configuration is done interactively.
 
 Here is an example with Powerlevel10k where I show current folder, current git status (notice the ``?1``, which means there is one file not tracked), python virtual environment, time, and a custom prompt that shows ⭐ with ``my display``.
 
@@ -91,7 +91,7 @@ References
 .. rubric:: Z Shell
 
 
--  `Website <http://zsh.sourceforge.net>`__ of zsh.
+-  `Website <https://zsh.sourceforge.io/>`__ of zsh.
 -  `Some features <https://github.com/hmml/awesome-zsh>`__ of zsh
 -  `Resources <https://github.com/unixorn/awesome-zsh-plugins#generic-zsh>`__ about zsh.
 -  Bash vs zsh on `Stackexchange <https://apple.stackexchange.com/questions/361870/what-are-the-practical-differences-between-bash-and-zsh>`__
@@ -99,11 +99,11 @@ References
 .. rubric:: Plugin managers
 
 
--  Some plugin managers: `zim <https://github.com/zimfw/zimfw>`__, `oh my zsh <https://ohmyz.sh>`__, `antigen <https://github.com/zsh-users/antigen>`__, `zplug <https://github.com/zplug/zplug>`__, `zinit <https://github.com/zdharma/zinit>`__, …
+-  Some plugin managers: `zim <https://github.com/zimfw/zimfw>`__, `oh my zsh <https://ohmyz.sh>`__, `antigen <https://github.com/zsh-users/antigen>`__, `zplug <https://github.com/zplug/zplug>`__, `zinit <https://github.com/zdharma/zi>`__, …
 -  Benchmarks for plugin managers: `zim benchmarks <https://github.com/zimfw/zimfw/wiki/Speed>`__, a Reddit `thread <https://www.reddit.com/r/zsh/comments/ak0vgi/a_comparison_of_all_the_zsh_plugin_mangers_i_used/>`__.
 -  a Reddit `thread <https://www.reddit.com/r/zsh/comments/bj6rwz/what_is_a_good_ohmyzsh_alternative/>`__ on plugin managers.
 
 .. rubric:: Prompts
 
 
--  Customizable and efficient prompts: `Powerlevel10k <https://github.com/romkatv/powerlevel10k>`__, `Spaceship <https://github.com/denysdovhan/spaceship-prompt>`__
+-  Customizable and efficient prompts: `Powerlevel10k <https://github.com/romkatv/powerlevel10k>`__, `Spaceship <https://github.com/spaceship-prompt/spaceship-prompt>`__

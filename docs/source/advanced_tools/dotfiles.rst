@@ -35,7 +35,7 @@ That being said, there exists several tools to do all the heavy lifting. At the 
 -  or to install packages using your system/language package manager
 
    -  on macOS when using `Homebrew <https://brew.sh/index_fr>`__: you can store a `.Brewfile <https://github.com/Homebrew/homebrew-bundle>`__ in your dotfile repository and call ``brew bundle``,
-   -  for python when using `pip <https://pip.pypa.io>`__: you can store a `requirements.txt <https://pip.pypa.io/en/stable/user_guide/#requirements-files>`__ file,
+   -  for python when using `pip <https://pip.pypa.io/en/stable/>`__: you can store a `requirements.txt <https://pip.pypa.io/en/stable/user_guide/#requirements-files>`__ file,
 
 -  or to set up your OS settings. In particular, for macOS you can look at this `file <https://github.com/mathiasbynens/dotfiles/blob/master/.macos>`__.
 

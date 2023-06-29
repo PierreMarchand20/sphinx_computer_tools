@@ -37,7 +37,7 @@ Terminology
 
 -  `Terminal <https://en.wikipedia.org/wiki/Terminal_emulator>`__, or *terminal emulator*: a text interface to a shell. In other words, it is the software in which users can access to the command-line interface. Before, terminal refereed to a physical hardware with a keyboard and a monitor. They are now mostly *virtual*, and in practice, it is the window in which we can interact with a shell. Examples of terminals (see `list <https://en.wikipedia.org/wiki/List_of_terminal_emulators>`__):
 
-   -  on macOS: `Terminal.app <https://en.wikipedia.org/wiki/Terminal_(macOS)>`__, `iTerm2 <https://www.iterm2.com>`__, …
+   -  on macOS: `Terminal.app <https://en.wikipedia.org/wiki/Terminal_(macOS)>`__, `iTerm2 <https://iterm2.com/>`__, …
    -  on Linux: `Konsole <https://konsole.kde.org>`__, `GNOME terminal <https://en.wikipedia.org/wiki/GNOME_Terminal>`__, …
    -  on Windows: `Windows Terminal <https://devblogs.microsoft.com/commandline/introducing-windows-terminal/>`__, `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/>`__, …
 
@@ -226,7 +226,7 @@ As we previously mentioned, VS Code comes with its own `terminal <https://code.v
 
 That being said, I should point out that VS Code's terminal has some nice features you should be aware of, for examples:
 
-- Terminal processes are `restored <https://code.visualstudio.com/docs/terminal/basics#_terminal-process-reconnection>`_ on window reload, if you reload your VS Code window for example, it will not kill your shell session.
+- Terminal processes are `restored <https://code.visualstudio.com/docs/terminal/advanced#_persistent-sessions>`_ on window reload, if you reload your VS Code window for example, it will not kill your shell session.
 - Every path or URL displayed in the terminal is a `link <https://code.visualstudio.com/docs/terminal/basics#_links>`_, meaning you can left-click holding ``Ctrl/Cmd`` [#]_ to use it (as in the editor). For a file, it will open it in an editor, which is very useful when compiling or debugging.
 - You can use "`Find <https://code.visualstudio.com/docs/terminal/basics#_find>`_" in the terminal using ``Ctrl/Cmd+f`` as you would expect.
 

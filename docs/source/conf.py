@@ -87,7 +87,13 @@ sphinxcontrib_asciinema_defaults = {
     # 'path': '_static/asciicast/'
 }
 
-# -- Options for LaTeC output -------------------------------------------------
+# -- Options for linkcheck    -------------------------------------------------
+linkcheck_anchors = False  # too many false positives
+linkcheck_ignore = [
+    r"https://github.com/PierreMarchand20/sphinx_computer_tools/pull/\d+"  # see https://github.com/sphinx-doc/sphinx/issues/11477
+]
+
+# -- Options for LaTeX output -------------------------------------------------
 latex_engine = "lualatex"
 latex_elements = {
     "tableofcontents": r"",
