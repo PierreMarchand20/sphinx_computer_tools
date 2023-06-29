@@ -227,7 +227,7 @@ References
 
 - Wikipedia for `Secure Shell <https://en.wikipedia.org/wiki/Secure_Shell>`_, `Secured copy protocol <https://en.wikipedia.org/wiki/Secure_copy_protocol>`_ and `rsync <https://en.wikipedia.org/wiki/Rsync>`_
 - `Article <https://wiki.archlinux.org/title/SSH_keys>`_ on SSH keys from ArchWiki 
-- StackExchange discussions on the subject can be found `here <https://security.stackexchange.com/questions/69407/why-is-using-an-ssh-key-more-secure-than-using-passwords>`_ and `here <https://security.stackexchange.com/questions/3887/is-using-a-public-key-for-logging-in-to-ssh-any-better-than-saving-a-password>`_ 
+- StackExchange discussions on the subject can be found `here <https://security.stackexchange.com/questions/69407/why-is-using-an-ssh-key-more-secure-than-using-passwords>`__ and `here <https://security.stackexchange.com/questions/3887/is-using-a-public-key-for-logging-in-to-ssh-any-better-than-saving-a-password>`__ 
 - StackOverflow discussion on `ssh vs rsync <https://stackoverflow.com/questions/20244585/how-does-scp-differ-from-rsync>`_ 
 
 .. [#] The main exception concerns `hard links <https://en.wikipedia.org/wiki/Hard_link>`_, see documentation for more information.
