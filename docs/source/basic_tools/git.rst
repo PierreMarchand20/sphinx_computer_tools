@@ -435,9 +435,11 @@ References
 -  Several possible workflows for teams are described `here <https://www.atlassian.com/git/tutorials/comparing-workflows>`__ by Atlassian.
 -  Lists of GUIs `here <https://git-scm.com/downloads/guis>`__.
 
-.. rubric:: Other tutorials
+.. rubric:: Other references
 
 -  `Tutorial <https://infomath.pages.math.cnrs.fr/tutorial/git/>`__ of Infomath
+-  multilingual interactive `git cheatsheet <http://ndpsoftware.com/git-cheatsheet.html#loc=workspace;>`_ 
+- open source game `Oh My Git! <https://ohmygit.org>`_ 
 
 .. rubric:: To go further
 
