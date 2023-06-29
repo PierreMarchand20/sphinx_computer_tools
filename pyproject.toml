@@ -1,0 +1,40 @@
+[project]
+name = "computer_tools"
+version = "0.1"
+authors = [
+  { name="Pierre Marchand", email="test@test.com" },
+]
+description = "Introduction to useful computer tools"
+
+readme = {file = "README.rst", content-type = "text/x-rst"}
+requires-python = ">=3.7"
+license = {text = "MIT License"}
+classifiers = [
+    "Framework :: Sphinx",
+    # "Programming Language :: Python :: 3",
+    # "License :: OSI Approved :: MIT License",
+    # "Operating System :: MacOS",
+    # "Operating System :: Unix"
+]
+keywords = ["computer tools"]
+dependencies = [
+    "sphinxcontrib.asciinema",
+    "sphinxcontrib-svg2pdfconverter",
+    "sphinx-copybutton",
+    "sphinx-contributors",
+    "furo"
+]
+
+[project.urls]
+Homepage = "https://pmarchand.pages.math.cnrs.fr/computertools/"
+"Issue Tracker" = "https://github.com/PierreMarchand20/sphinx_computer_tools/issues"
+"Source Code" = "https://github.com/PierreMarchand20/sphinx_computer_tools"
+
+[project.optional-dependencies]
+dev  = ["black", "isort", "pytest"]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
