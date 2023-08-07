@@ -37,8 +37,8 @@ Unreleased
 
 .. rubric:: Fixed
 
-- typos (`#1 <https://github.com/PierreMarchand20/sphinx_computer_tools/pull/1)>`_). Thanks `Marcella (@mbonazzoli) <https://github.com/marcellabonazzoli>`_ !
-- typos (`#2 <https://github.com/PierreMarchand20/sphinx_computer_tools/pull/2)>`_). Thanks `Zois (@zmoitier) <https://github.com/zmoitier>`_ !
+- typos (`#1 <https://github.com/PierreMarchand20/sphinx_computer_tools/pull/1>`_). Thanks `Marcella (@mbonazzoli) <https://github.com/marcellabonazzoli>`_ !
+- typos (`#2 <https://github.com/PierreMarchand20/sphinx_computer_tools/pull/2>`_). Thanks `Zois (@zmoitier) <https://github.com/zmoitier>`_ !
 - fix numerous warnings
 
 
