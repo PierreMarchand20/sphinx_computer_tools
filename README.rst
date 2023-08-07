@@ -4,6 +4,8 @@
 Computer Tools
 ==============
 
+|ci|
+
 The purpose of this document is to present useful tools for people who are just learning to code and for people who are more familiar with programming but want to improve their workflow.
 
 .. rubric:: How to access this document
@@ -27,4 +29,7 @@ Thank you to the people who helped to improve this document!
 ..  contributors:: PierreMarchand20/sphinx_computer_tools
     :contributions: 
     :exclude: PierreMarchand20
-    
+
+.. |ci| image:: https://github.com/PierreMarchand20/sphinx_computer_tools/actions/workflows/CI.yml/badge.svg
+   :alt: CI
+   :target: https://github.com/PierreMarchand20/sphinx_computer_tools/actions/workflows/CI.yml
